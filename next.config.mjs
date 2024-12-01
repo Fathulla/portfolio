@@ -1,8 +1,10 @@
-import { withSentryConfig } from "@sentry/nextjs";
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: "export",
+  output: "export", // Статический экспорт
   typescript: {
-    ignoreBuildErrors: true,
+    ignoreBuildErrors: true, // Игнорировать ошибки TypeScript
   },
+  trailingSlash: true, // Добавляет слэш в конце URL (нужно для статики)
 };
+
+export default nextConfig;
